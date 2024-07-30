@@ -1,0 +1,90 @@
+/* Example CSS for location page */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+.location-link {
+    text-decoration: none;
+    color: #1F5927;
+    font-weight: bold;
+}
+
+.location-section {
+    padding: 20px;
+}
+
+.location-box, .info-box {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px 0;
+    padding: 20px;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+}
+
+.material-icons {
+    font-size: 36px;
+    margin-right: 20px;
+}
+
+.info-text h3 {
+    margin: 0 0 10px 0;
+}
+
+.map-link {
+    color: #1F5927;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.footer-content {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links {
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    text-decoration: none;
+    color: #1F5927;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+    .info-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}
