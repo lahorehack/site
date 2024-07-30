@@ -1,0 +1,181 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+.hero {
+    background: url('https://lahore-hack.nl-ams-1.linodeobjects.com/application-form-background.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px;
+    color: white;
+}
+.hero .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hero .header .logo {
+    max-height: 60px;
+    width: auto;
+}
+.hero .header .location-link {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: rgba(31, 89, 39, 0.8);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+.hero .header .location-link:hover {
+    background-color: rgba(31, 89, 39, 1);
+}
+.hero .content {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.hero .content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 0;
+}
+.hero .content p {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.calendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.calendar .calendar-container {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 24px;
+    border: 6px solid #fff;
+}
+.calendar .date-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+.calendar .date-box .month {
+    font-size: 2rem;
+    color: #ff9900;
+}
+.calendar .date-box .day {
+    font-size: 3rem;
+    color: white;
+}
+.calendar .location {
+    font-size: 1.5rem;
+    color: white;
+}
+.calendar .location a {
+    color: #ff9900;
+    text-decoration: none;
+}
+.enroll-button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: rgba(31, 89, 39, 0.8);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    margin-top: 20px;
+}
+.enroll-button:hover {
+    background-color: rgba(31, 89, 39, 1);
+}
+.welcome-section {
+    background-color: white;
+    color: #333;
+    padding: 40px 20px;
+    text-align: center;
+}
+.welcome-section h2 {
+    font-size: 2.5rem;
+    color: #1F5927;
+}
+.welcome-section p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.feature {
+    width: 30%;
+    text-align: center;
+    margin: 20px;
+}
+.feature .material-icons {
+    font-size: 50px;
+    color: #ff9900; /* Custom color for the icons */
+}
+.feature p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+.safe-box {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.safe-box h3 {
+    font-size: 1.5rem;
+    color: #1F5927;
+    margin-bottom: 10px;
+}
+.safe-box p {
+    font-size: 1rem;
+}
+@media (max-width: 768px) {
+    .hero .content h1 {
+        font-size: 2.5rem;
+    }
+    .hero .content p {
+        font-size: 1.2rem;
+    }
+    .calendar .calendar-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .calendar .date-box {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .calendar .location {
+        font-size: 1.2rem;
+    }
+    .features {
+        flex-direction: column;
+    }
+    .feature {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .safe-box {
+        width: 100%;
+    }
+}
