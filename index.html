@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,122 +10,392 @@
     <title>Lahore Hack</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="shortcut icon" href="https://lahore-hack.nl-ams-1.linodeobjects.com/lahore hackimage.png" type="image/x-icon">
-    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="https://lahore-hack.nl-ams-1.linodeobjects.com/lahore-hackimage.png" type="image/x-icon">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 50px;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            height: 100%;
+        }
+
+        .hero {
+            background-color: #121212;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+
+        .hero .content h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 0;
+        }
+
+       .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; /* Move down by 1vh */
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: url('https://lahore-hack.nl-ams-1.linodeobjects.com/application-form-background.png') no-repeat center center/cover;
+            z-index: -1; /* Ensure the pseudo-element is behind other content */
+        }
+
+
+        .hero .content p {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        .calendar {
+            display: flex;
+            width: 250px;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 24px;
+            border: 6px solid #fff;
+            margin: 20px auto;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .calendar .date-box {
+            margin-bottom: 10px;
+        }
+
+        .calendar .date-box .month {
+            font-size: 2rem;
+            color: #ff9900;
+        }
+
+        .calendar .date-box .day {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .calendar .location {
+            margin-top: 0;
+        }
+
+        .calendar .location .venue {
+            font-size: 1.5rem;
+            color: #ff9900;
+        }
+
+        .calendar .location .city {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .calendar .location a {
+            font-size: 1.5rem;
+            color: #ff9900;
+            text-decoration: none;
+        }
+
+        .enroll-button {
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: rgba(31, 89, 39, 0.8);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .enroll-button:hover {
+            background-color: rgba(31, 89, 39, 1);
+        }
+
+        .welcome-section,
+        .faq-section,
+        .details-section,
+        .sponsors-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .welcome-section h2,
+        .faq-section h2,
+        .details-section h2,
+        .sponsors-section h2 {
+            font-size: 2.5rem;
+            color: #1F5927;
+            margin-bottom: 20px;
+        }
+
+        .welcome-section p,
+        .faq-section p,
+        .details-section p,
+        .sponsors-section p {
+            font-size: 1.2rem;
+        }
+
+        .features,
+        .faq-container,
+        .details-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature,
+        .faq-item,
+        .detail-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 45%;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            margin: 10px;
+        }
+
+        .feature i.material-icons,
+        .detail-box i.material-icons {
+            font-size: 3rem;
+            color: #ff9900;
+            margin-bottom: 10px;
+        }
+
+        .safe-box {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item h3,
+        .detail-box h3 {
+            font-size: 1.5rem;
+            color: #1F5927;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin-bottom: 10px;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            color: #1F5927;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            color: #0056b3;
+        }
+
+        .footer-content a {
+            color: #1F5927;
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero .content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .content p {
+                font-size: 1.2rem;
+            }
+
+            .calendar {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .calendar .date-box {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .features,
+            .faq-container,
+            .details-container {
+                flex-direction: column;
+            }
+
+            .feature,
+            .faq-item,
+            .detail-box {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .safe-box {
+                width: 95%;
+                padding: 15px;
+                margin: 10px auto;
+            }
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: absolute;
+            width: calc(100% - 40px);
+            top: 10px;
+            left: 10px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            max-height: 60px;
+        }
+
+        .location-link {
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: rgba(31, 89, 39, 0.8);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .shiny-text {
+            color: #fff;
+            font-size: 500px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            display: inline-block;
+            position: relative;
+            -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+            -webkit-mask-size: 200%;
+            animation: shine 2s linear infinite;
+        }
+
+        @keyframes shine {
+            from {
+                -webkit-mask-position: 150%;
+            }
+
+            to {
+                -webkit-mask-position: -50%;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <div class="header">
+        <img src="https://lahore-hack.nl-ams-1.linodeobjects.com/lahore hackimage.png" alt="Lahore Hack Logo" class="logo">
+        <a href="/location" class="location-link">LOCATION</a>
+    </div>
     <section class="hero">
-        <div class="header">
-            <img src="https://lahore-hack.nl-ams-1.linodeobjects.com/lahore hackimage.png" alt="Lahore Hack Logo" class="logo">
-            <a href="/location" class="location-link">LOCATION</a>
-        </div>
         <div class="content">
-            <h1>Lahore<br>Hack.</h1>
+            <h1 class="shiny-text">Lahore Hack</h1>
             <p>Learn to code with 16 hours of fun, free food, & prizes.</p>
             <div class="calendar">
-                <div class="calendar-container">
-                    <div class="date-box">
-                        <div class="month">September</div>
-                        <div class="day">13</div>
-                    </div>
-                    <div class="location">
-                        <a href="/location">APSIS, Lahore</a>
-                    </div>
+                <div class="date-box">
+                    <div class="month">September</div>
+                    <div class="day">13</div>
+                </div>
+                <div class="location">
+                    <a href="/location">APSIS, Lahore</a>
                 </div>
             </div>
-            <a onclick="alert('Registration opens next week!')" class="enroll-button">Enroll yourselves for free 🎊!</a>
+            <a href="#enroll" class="enroll-button">Enroll Now</a>
         </div>
     </section>
+
     <section class="welcome-section">
         <h2>Welcome to Lahore Hack</h2>
-        <p>Lahore Hack is a 16-hour event where developers, designers from across Pakistan would come together to build creative and amazing apps, websites and games. We will make sure your experience is the best with free food, high-speed internet, mentorship and workshops. In the end, your projects would be reviewed and the winners would be awarded cool prizes.</p>
-        <div class="features">
-            <div class="feature">
-                <i class="material-icons">school</i>
-                <p><strong>Beginner Oriented:</strong> Beginners are not only welcome but expected to join us so they could learn from our mentors and workshops.</p>
-            </div>
-            <div class="feature">
-                <i class="material-icons">fastfood</i>
-                <p><strong>Free Food:</strong> Enjoy delicious meals and snacks throughout the event.</p>
-            </div>
-            <div class="feature">
-                <i class="material-icons">emoji_events</i>
-                <p><strong>Prizes:</strong> Win items such as Raspberry Pis, AirPods and software subscriptions!</p>
-            </div>
-        </div>
-        <div class="safe-box">
-            <h3>Wait, Hacking? Is that safe?</h3>
-            <p><strong>YES, IT'S ENTIRELY SAFE!</strong> We’re not hacking into databases or anything like that. Here, "hacking" means creative problem-solving and building amazing projects. It's all about learning, fun, and innovation!</p>
-        </div>
+        <p>Join us for an exciting day of coding, collaboration, and fun. Learn new skills, meet fellow enthusiasts, and compete for amazing prizes.</p>
     </section>
+
     <section class="faq-section">
         <h2>Frequently Asked Questions</h2>
         <div class="faq-container">
             <div class="faq-item">
-                <h3>How much does this cost?</h3>
-                <p>Everything including the workshops, food and everything is 100% free. Nothing will be charged from you.</p>
+                <h3>What is Lahore Hack?</h3>
+                <p>Lahore Hack is a coding event designed for high schoolers to learn, compete, and have fun. It includes workshops, challenges, and opportunities to win prizes.</p>
             </div>
             <div class="faq-item">
                 <h3>Who can participate?</h3>
-                <p>Anyone under 18 can participate as long as they have parental consent.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What If I'm new to coding?</h3>
-                <p>You are more than welcome. You will get the chance to enter the world of coding with us!</p>
-            </div>
-            <div class="faq-item">
-                <h3>What If I already know how to code?</h3>
-                <p>All skill levels including yours is very welcome!</p>
-            </div>
-            <div class="faq-item">
-                <h3>Do I need a team?</h3>
-                <p>No! You would meet fellow hackers in the event, you can team up with them or go solo, however you wish! If you want to bring a friend to partner with you, you are welcome to do that!</p>
-            </div>
-            <div class="faq-item">
-                <h3>What can I make?</h3>
-                <p>Anything! A website, a game, an app. Your project would be judged on the basis of presentation, creativity and the effort put into it!</p>
-            </div>
-            <div class="faq-item">
-                <h3>What should I bring?</h3>
-                <p>You should bring your computer, charger or anything extra you need for your hack. High speed internet would be provided by us! make sure to bring your Student ID, If your school doesn't issue one, email us <a href="mailto:dawood@lahorehack.com">here</a></p>
-            </div>
-            <div class="faq-item">
-                <h3>Who runs this? Is it supervised?</h3>
-                <p>The event is completely run by high schoolers and is supervised by adults. It is fiscally sponosred by <a href="https://hackclub.com">Hack Club</a></p>
+                <p>The event is open to all high school students who are interested in coding and technology.</p>
             </div>
         </div>
     </section>
+
     <section class="details-section">
-        <h2>Get All the Details</h2>
+        <h2>Event Details</h2>
         <div class="details-container">
             <div class="detail-box">
                 <i class="material-icons">schedule</i>
-                <h3>Schedule</h3>
-                <p>Doors open @ 10 AM PKT on 13th September 2024. Event starts @ 11 AM PKT. Ends on 12 PM PKT on 14th September 2024. Full schedule would be published soon.</p>
+                <h3>Event Schedule</h3>
+                <p>The event starts at 10 AM and goes until 6 PM. Join us for a day filled with coding challenges and workshops.</p>
             </div>
             <div class="detail-box">
-                <i class="material-icons">location_on</i>
-                <h3>Location</h3>
-                <p>APSIS, Lahore <br> Tufail Road, 54000 <br> <a href="/location" style="text-decoration: none; color: #1F5927; font-weight: bold !important;">Click here for more details ></a></p>
+                <i class="material-icons">food_bank</i>
+                <h3>Free Food</h3>
+                <p>Enjoy free meals and snacks throughout the day. Stay energized while you code!</p>
             </div>
         </div>
     </section>
+
     <section class="sponsors-section">
-        <h2>Sponsors</h2>
-        <p>Want to sponsor us? Check out our <a href="https://lahore-hack.nl-ams-1.linodeobjects.com/Lahore Hack - Prospectus.pdf" target="_blank">prospectus</a> or email us <a href="mailto:dawood@lahorehack.com">here</a>.</p>
-        <p>Fiscal Sponsor:</p>
-        <a href="https://hackclub.com/hcb"><img src="https://lahore-hack.nl-ams-1.linodeobjects.com/hcb-light.png" alt="HCB Logo" class="fiscal-sponsor-logo"></a>
+        <h2>Our Sponsors</h2>
+        <p>Special thanks to our sponsors for their support. Your contributions make this event possible!</p>
     </section>
-    <footer>
+
+    <div class="safe-box">
+        <h2>Safety Measures</h2>
+        <p>We prioritize the safety and well-being of all participants. Please follow the guidelines and protocols set in place for a safe and enjoyable event.</p>
+    </div>
+
+    <footer class="footer">
         <div class="footer-content">
+            <p>&copy; 2024 Lahore Hack. All rights reserved.</p>
             <div class="social-links">
-                <a href="https://discord.gg/8gHQy7qscu" target="_blank" class="social-icon"><i class="material-icons">discord</i></a>
-                <a href="https://instagram.com/lahore.hack" target="_blank" class="social-icon"><i class="material-icons">instagram</i></a>
-                <a href="mailto:dawood@lahorehack.com" class="social-icon"><i class="material-icons">email</i></a>
+                <a href="#" class="social-icon material-icons">facebook</a>
+                <a href="#" class="social-icon material-icons">twitter</a>
+                <a href="#" class="social-icon material-icons">instagram</a>
             </div>
-            <p><strong>LAHORE HACK</strong> | Fiscally sponsored by The Hack Foundation (d.b.a. Hack Club), a 501(c)(3) nonprofit (EIN: 81-2908499)</p>
-            <p><a href="https://hcb.hackclub.com/lahore-hack" target="_blank" style="color: #1F5927; text-decoration: none;">Our Finances are transparent here</a></p>
+            <a href="/contact">Contact Us</a>
         </div>
-    </footer>            
+    </footer>
 </body>
+
 </html>
