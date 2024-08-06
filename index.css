@@ -376,50 +376,38 @@ body, html {
     }
 
     .sponsors-section .fiscal-sponsor-logo {
-        width: 100px; /* Adjusted size for smaller screens */
+        width: 100px; 
     }
 }
-/* Footer styles */
 footer {
-    background-color: #f8f9fa;
-    padding: 20px;
+    background-color: #1F5927;
+    color: white;
     text-align: center;
-    border-top: 1px solid #e0e0e0;
+    padding: 20px;
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     margin-bottom: 10px;
 }
 
 .social-icon {
-    font-size: 24px;
-    color: #1F5927;
-    margin: 0 10px;
+    color: white;
     text-decoration: none;
+    font-size: 24px;
 }
 
 .social-icon:hover {
-    color: #0056b3;
+    color: #cccccc;
 }
 
-.footer-content p {
-    margin: 10px 0;
-    font-size: 14px;
-}
-
-.footer-content a {
-    color: #1F5927;
-    text-decoration: none;
-}
-
-.footer-content a:hover {
-    text-decoration: underline;
-}
 
 /* Responsive styles */
 @media (max-width: 768px) {
